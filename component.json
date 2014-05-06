@@ -1,0 +1,17 @@
+{
+  "name": "detect",
+  "repo": "bredele/detec",
+  "description": "detect if your browser supports webrtc.",
+  "version": "0.0.0",
+  "keywords": [],
+  "dependencies": {
+
+  },
+  "development": {
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
