@@ -9,24 +9,15 @@ with [component](http://github.com/component/component):
 
 	$ component install bredele/detect
 
-
 ## Simple usage
 
-  detect if your browser supports webrtc
+  detect if your browser supports webrtc and provide a feedback to the user. Here's an example with **[peer](http://github.com/bredele/peer)**:
 
 ```js
 var detect = require('detect');
-
-detect(function() {
-	// do something
-});
-
-```
-  detect is particularily useful to provide a feedback to the user. Here's an example with **[peer](http://github.com/bredele/peer)**:
-
-```js
 var peer = require('peer');
 
+// both callbacks are optional
 detect(function() {
 	var skype = peer();
 }, function() {
@@ -34,6 +25,59 @@ detect(function() {
 });
 ```
 
+  webrtc is no exception and there are unfortunately different implementations according you are on Chrome or Firefox.
+	
+```js
+detect('cw', function() {
+	// it is chrome!
+});
+
+detect('mf', function() {
+	// it is firefox!
+});
+```
+
+## API
+
+### detect()
+
+  Return true if webrtc is supported (false otherwise).
+
+```js
+detect();
+```
+
+### detect(callback)
+
+  Execute callback if webrtc is supported
+
+```js
+detect(function() {
+	// do something
+})
+```
+
+### detect(callback, error)
+
+  Execute error callback if webrtc is not supported
+
+```js
+detect(function() {
+}, function() {
+	// do something if not supported
+})
+```
+
+### detect(agent, callback)
+
+  Execute callback if is agent (`cw` or `mf`).
+
+```js
+detect('cw', function() {
+	// you are on chrome
+});
+```
+  > detect will probably support browser versions ('cw23...32') in a futur release.
 
 ## License
 
