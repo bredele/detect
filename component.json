@@ -2,7 +2,7 @@
   "name": "detect",
   "repo": "bredele/detec",
   "description": "detect if your browser supports webrtc.",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "keywords": [],
   "dependencies": {
     "bredele/deus": "~0.3.3"
